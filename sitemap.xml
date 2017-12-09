@@ -1,71 +1,71 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<?xml-stylesheet type="text/xsl" href="lmsreborn.github.io/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>lmsreborn.github.io/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2017-08-28T21:41:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/post/ok/</loc>
+    <loc>/post/ok/</loc>
     <lastmod>2017-12-09T21:54:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/post/lala/</loc>
+    <loc>/post/lala/</loc>
     <lastmod>2017-12-09T21:48:35+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/post/lele/</loc>
+    <loc>/post/lele/</loc>
     <lastmod>2017-12-09T21:42:08+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/post/haha/</loc>
+    <loc>/post/haha/</loc>
     <lastmod>2017-12-09T21:42:04+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/post/hehe/</loc>
+    <loc>/post/hehe/</loc>
     <lastmod>2017-12-09T21:36:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/</loc>
+    <loc>/</loc>
     <lastmod>2017-08-28T21:41:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/categories/</loc>
+    <loc>/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/post/</loc>
+    <loc>/post/</loc>
     <lastmod>2017-12-09T21:54:42+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/tags/</loc>
+    <loc>/tags/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
