@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>https://lmsreborn.github.io/</link>
+    <description>Recent content on </description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 23 Aug 2017 18:03:09 +0800</lastBuildDate>
+    
+	<atom:link href="https://lmsreborn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Theme preview</title>
+      <link>https://lmsreborn.github.io/post/theme-preview/</link>
+      <pubDate>Wed, 23 Aug 2017 18:03:09 +0800</pubDate>
+      
+      <guid>https://lmsreborn.github.io/post/theme-preview/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;Copy from &lt;a href=&#34;https://laozhu.me/post/hugo-nuo-post-preview/&#34;&gt;《Hugo 主题 Nuo 文章样式预览》&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这篇文章集中说明主题所支持的 Markdown 语法和 Hugo Shortcodes 插件，你也可以在这里预览到他们的样子。如果你不喜欢某些样式，可以去修改 css/ 文件夹下的 .scss 文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>https://lmsreborn.github.io/about/</link>
+      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      
+      <guid>https://lmsreborn.github.io/about/</guid>
+      <description> I believe I am.
+Born as the bright summer flowers Do not withered undefeated fiery demon rule.
+ </description>
+    </item>
+    
+    <item>
+      <title>Ok</title>
+      <link>https://lmsreborn.github.io/post/ok/</link>
+      <pubDate>Sat, 09 Dec 2017 21:54:42 +0800</pubDate>
+      
+      <guid>https://lmsreborn.github.io/post/ok/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Lala</title>
+      <link>https://lmsreborn.github.io/post/lala/</link>
+      <pubDate>Sat, 09 Dec 2017 21:48:35 +0800</pubDate>
+      
+      <guid>https://lmsreborn.github.io/post/lala/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Lele</title>
+      <link>https://lmsreborn.github.io/post/lele/</link>
+      <pubDate>Sat, 09 Dec 2017 21:42:08 +0800</pubDate>
+      
+      <guid>https://lmsreborn.github.io/post/lele/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Haha</title>
+      <link>https://lmsreborn.github.io/post/haha/</link>
+      <pubDate>Sat, 09 Dec 2017 21:42:04 +0800</pubDate>
+      
+      <guid>https://lmsreborn.github.io/post/haha/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hehe</title>
+      <link>https://lmsreborn.github.io/post/hehe/</link>
+      <pubDate>Sat, 09 Dec 2017 21:36:23 +0800</pubDate>
+      
+      <guid>https://lmsreborn.github.io/post/hehe/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
