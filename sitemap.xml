@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<?xml-stylesheet type="text/xsl" href="https://lmsreborn.github.io.git/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="https://lmsreborn.github.io/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://lmsreborn.github.io.git/post/usegit/</loc>
+    <loc>https://lmsreborn.github.io/post/usegit/</loc>
     <lastmod>2017-12-09T22:55:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://lmsreborn.github.io.git/categories/</loc>
+    <loc>https://lmsreborn.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://lmsreborn.github.io.git/post/</loc>
+    <loc>https://lmsreborn.github.io/post/</loc>
     <lastmod>2017-12-09T22:55:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://lmsreborn.github.io.git/tags/</loc>
+    <loc>https://lmsreborn.github.io/tags/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://lmsreborn.github.io.git/</loc>
+    <loc>https://lmsreborn.github.io/</loc>
     <lastmod>2017-12-09T22:55:31+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
