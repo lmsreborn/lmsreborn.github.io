@@ -6,66 +6,9 @@
     <description>Recent content on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 20 Aug 2017 21:38:52 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>About</title>
-      <link>/about/</link>
-      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
-      
-      <guid>/about/</guid>
-      <description> I believe I am.
-Born as the bright summer flowers Do not withered undefeated fiery demon rule.
- </description>
-    </item>
-    
-    <item>
-      <title>Ok</title>
-      <link>/post/ok/</link>
-      <pubDate>Sat, 09 Dec 2017 21:54:42 +0800</pubDate>
-      
-      <guid>/post/ok/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Lala</title>
-      <link>/post/lala/</link>
-      <pubDate>Sat, 09 Dec 2017 21:48:35 +0800</pubDate>
-      
-      <guid>/post/lala/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Lele</title>
-      <link>/post/lele/</link>
-      <pubDate>Sat, 09 Dec 2017 21:42:08 +0800</pubDate>
-      
-      <guid>/post/lele/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Haha</title>
-      <link>/post/haha/</link>
-      <pubDate>Sat, 09 Dec 2017 21:42:04 +0800</pubDate>
-      
-      <guid>/post/haha/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Hehe</title>
-      <link>/post/hehe/</link>
-      <pubDate>Sat, 09 Dec 2017 21:36:23 +0800</pubDate>
-      
-      <guid>/post/hehe/</guid>
-      <description>&lt;p&gt;&lt;/p&gt;</description>
-    </item>
     
   </channel>
 </rss>
