@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: sitemap.xml
+Sitemap: https://lmsreborn.github.io.git/sitemap.xml
