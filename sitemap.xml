@@ -1,65 +1,72 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="lmsreborn.github.io/sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>/post/scheduler/</loc>
+    <loc>lmsreborn.github.io/post/slot/</loc>
+    <lastmod>2017-12-11T19:09:03+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>lmsreborn.github.io/post/scheduler/</loc>
     <lastmod>2017-12-11T00:57:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/instance/</loc>
+    <loc>lmsreborn.github.io/post/instance/</loc>
     <lastmod>2017-12-10T23:02:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/post/blob/</loc>
+    <loc>lmsreborn.github.io/post/blob/</loc>
     <lastmod>2017-12-09T23:17:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>lmsreborn.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/flink/</loc>
+    <loc>lmsreborn.github.io/tags/flink/</loc>
     <lastmod>2017-12-09T23:17:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/flink/</loc>
+    <loc>lmsreborn.github.io/categories/flink/</loc>
     <lastmod>2017-12-09T23:17:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2017-12-11T00:57:12+08:00</lastmod>
+    <loc>lmsreborn.github.io/post/</loc>
+    <lastmod>2017-12-11T19:09:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>lmsreborn.github.io/tags/</loc>
     <lastmod>2017-12-09T23:17:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2017-12-11T00:57:12+08:00</lastmod>
+    <loc>lmsreborn.github.io/</loc>
+    <lastmod>2017-12-11T19:09:03+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
