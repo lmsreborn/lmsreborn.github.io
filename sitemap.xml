@@ -1,64 +1,64 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<?xml-stylesheet type="text/xsl" href="lmsreborn.github.io/sitemap.xsl"?>
+<?xml-stylesheet type="text/xsl" href="sitemap.xsl"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>lmsreborn.github.io/post/scheduler/</loc>
+    <loc>/post/scheduler/</loc>
     <lastmod>2017-12-11T00:57:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/post/instance/</loc>
+    <loc>/post/instance/</loc>
     <lastmod>2017-12-10T23:02:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/post/blob/</loc>
+    <loc>/post/blob/</loc>
     <lastmod>2017-12-09T23:17:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/categories/</loc>
+    <loc>/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/tags/flink/</loc>
+    <loc>/tags/flink/</loc>
     <lastmod>2017-12-09T23:17:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/categories/flink/</loc>
+    <loc>/categories/flink/</loc>
     <lastmod>2017-12-09T23:17:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/post/</loc>
+    <loc>/post/</loc>
     <lastmod>2017-12-11T00:57:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2017-12-09T23:17:44+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>lmsreborn.github.io/</loc>
+    <loc>/</loc>
     <lastmod>2017-12-11T00:57:12+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
