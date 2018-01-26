@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>SubmitTask - lms&#39;s blog</title>
+  <title>Task的执行 - lms&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -45,7 +45,7 @@
 <link href="/lmsreborn.github.io/dist/even.min.css?v=2.7.0" rel="stylesheet">
 <link href="/lmsreborn.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
-<meta property="og:title" content="SubmitTask" />
+<meta property="og:title" content="Task的执行" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="lmsreborn.github.io/post/submittask/" />
@@ -65,17 +65,17 @@
 
 
 
-<meta itemprop="name" content="SubmitTask">
+<meta itemprop="name" content="Task的执行">
 <meta itemprop="description" content="">
 
 
 <meta itemprop="dateModified" content="2017-12-14T20:14:21&#43;08:00" />
-<meta itemprop="wordCount" content="1214">
+<meta itemprop="wordCount" content="1527">
 
 
 
 <meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="SubmitTask"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Task的执行"/>
 <meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
@@ -139,7 +139,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">SubmitTask</h1>
+      <h1 class="post-title">Task的执行</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2017-12-14 </span>
@@ -156,17 +156,33 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#process-of-submittask">Process of submitTask</a>
+<li>
+<ul>
+<li><a href="#task-overview">Task - Overview</a>
 <ul>
 <li><a href="#1-task-starttaskthread-executingthread-start-调用task的run方法in-taskmanager-taskmanager">1. task.startTaskThread() -&gt; executingThread.start() -&gt; 调用Task的run方法in TaskManager - TaskManager</a></li>
 <li><a href="#2-run-task">2. run() - Task</a></li>
 <li><a href="#3-invokable-invoke-streamtask">3. invokable.invoke() - StreamTask</a></li>
+</ul></li>
+<li><a href="#task-source-collection-source-flat-map">Task - Source: Collection Source -&gt; Flat Map</a>
+<ul>
 <li><a href="#4-run-sourcestreamtask-streamtask">4. run() - SourceStreamTask (StreamTask)</a></li>
 <li><a href="#5-run-streamsource-operator">5. run() - StreamSource (operator)</a></li>
 <li><a href="#6-run-fromelementsfunction-function">6. run() - FromElementsFunction (function)</a></li>
 <li><a href="#7-collect-streamsourcecontexts">7. collect() - StreamSourceContexts</a></li>
 <li><a href="#8-collect-operatorchain">8. collect() - OperatorChain</a></li>
 <li><a href="#9-processelement-streamflatmap-operator">9. processElement() - StreamFlatMap (operator)</a></li>
+</ul></li>
+<li><a href="#task-keyed-aggregation-sink">Task - Keyed Aggregation -&gt; Sink</a>
+<ul>
+<li><a href="#4-run-oneinputstreamtask">4. run() - OneInputStreamTask</a></li>
+<li><a href="#5-processinput-streaminputprocessor">5. processInput() - StreamInputProcessor</a></li>
+<li><a href="#6-processelement-streamgroupedreduce">6. processElement() - StreamGroupedReduce</a></li>
+<li><a href="#7-collect-abstractstreamoperator">7. collect() - AbstractStreamOperator</a></li>
+<li><a href="#8-collect-operatorchain-1">8. collect() - OperatorChain</a></li>
+<li><a href="#9-processelement-streamsink-operator">9. ProcessElement() - StreamSink (operator)</a></li>
+<li><a href="#10-invoke-printsinkfunction-funtion">10. invoke() - PrintSinkFunction (funtion)</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -177,9 +193,16 @@
     <div class="post-content">
       <p></p>
 
-<h1 id="process-of-submittask">Process of submitTask</h1>
+<p>以wordCount为例，taskManager收到两个task:</p>
 
-<h2 id="1-task-starttaskthread-executingthread-start-调用task的run方法in-taskmanager-taskmanager">1. task.startTaskThread() -&gt; executingThread.start() -&gt; 调用Task的run方法in TaskManager - TaskManager</h2>
+<ol>
+<li><strong>Source: Collection Source -&gt; Flat Map</strong></li>
+<li><strong>Keyed Aggregation -&gt; Sink</strong></li>
+</ol>
+
+<h2 id="task-overview">Task - Overview</h2>
+
+<h3 id="1-task-starttaskthread-executingthread-start-调用task的run方法in-taskmanager-taskmanager">1. task.startTaskThread() -&gt; executingThread.start() -&gt; 调用Task的run方法in TaskManager - TaskManager</h3>
 
 <p>因为创建一个task中有一段</p>
 
@@ -189,7 +212,7 @@ executingThread = new Thread(TASK_THREADS_GROUP, this, taskNameWithSubtask);
 
 </code></pre>
 
-<h2 id="2-run-task">2. run() - Task</h2>
+<h3 id="2-run-task">2. run() - Task</h3>
 
 <pre><code>try {
 	// ----------------------------
@@ -378,7 +401,7 @@ executingThread = new Thread(TASK_THREADS_GROUP, this, taskNameWithSubtask);
 <pre><code>	invokable = loadAndInstantiateInvokable(userCodeClassLoader, nameOfInvokableClass);
 </code></pre>
 
-<h2 id="3-invokable-invoke-streamtask">3. invokable.invoke() - StreamTask</h2>
+<h3 id="3-invokable-invoke-streamtask">3. invokable.invoke() - StreamTask</h3>
 
 <pre><code> *  -- invoke()
  *        |
@@ -395,14 +418,18 @@ executingThread = new Thread(TASK_THREADS_GROUP, this, taskNameWithSubtask);
 
 </code></pre>
 
-<h2 id="4-run-sourcestreamtask-streamtask">4. run() - SourceStreamTask (StreamTask)</h2>
+<hr />
+
+<h2 id="task-source-collection-source-flat-map">Task - Source: Collection Source -&gt; Flat Map</h2>
+
+<h3 id="4-run-sourcestreamtask-streamtask">4. run() - SourceStreamTask (StreamTask)</h3>
 
 <pre><code>protected void run() throws Exception {
 	headOperator.run(getCheckpointLock(), getStreamStatusMaintainer());
 }
 </code></pre>
 
-<h2 id="5-run-streamsource-operator">5. run() - StreamSource (operator)</h2>
+<h3 id="5-run-streamsource-operator">5. run() - StreamSource (operator)</h3>
 
 <pre><code>this.ctx = StreamSourceContexts.getSourceContext(timeCharacteristic,
 			getProcessingTimeService(),
@@ -416,7 +443,7 @@ try {
 	userFunction.run(ctx);
 </code></pre>
 
-<h2 id="6-run-fromelementsfunction-function">6. run() - FromElementsFunction (function)</h2>
+<h3 id="6-run-fromelementsfunction-function">6. run() - FromElementsFunction (function)</h3>
 
 <pre><code>while (isRunning &amp;&amp; numElementsEmitted &lt; numElements) {
 	T next;
@@ -436,7 +463,7 @@ try {
 }
 </code></pre>
 
-<h2 id="7-collect-streamsourcecontexts">7. collect() - StreamSourceContexts</h2>
+<h3 id="7-collect-streamsourcecontexts">7. collect() - StreamSourceContexts</h3>
 
 <pre><code>public void collect(T element) {
 	synchronized (lock) {
@@ -448,7 +475,7 @@ try {
 
 <p>其中,output就是<strong>OperatorChain</strong></p>
 
-<h2 id="8-collect-operatorchain">8. collect() - OperatorChain</h2>
+<h3 id="8-collect-operatorchain">8. collect() - OperatorChain</h3>
 
 <pre><code>public void collect(StreamRecord&lt;T&gt; record) {
 	if (this.outputTag != null) {
@@ -482,7 +509,7 @@ try {
 
 <p>其中operator就是flatmap</p>
 
-<h2 id="9-processelement-streamflatmap-operator">9. processElement() - StreamFlatMap (operator)</h2>
+<h3 id="9-processelement-streamflatmap-operator">9. processElement() - StreamFlatMap (operator)</h3>
 
 <pre><code>public void processElement(StreamRecord&lt;IN&gt; element) throws Exception {
 	collector.setTimestamp(element);
@@ -507,6 +534,103 @@ try {
 		}
 	}
 }
+</code></pre>
+
+<hr />
+
+<h2 id="task-keyed-aggregation-sink">Task - Keyed Aggregation -&gt; Sink</h2>
+
+<h3 id="4-run-oneinputstreamtask">4. run() - OneInputStreamTask</h3>
+
+<pre><code>protected void run() throws Exception {
+    StreamInputProcessor inputProcessor = this.inputProcessor;
+
+    while(this.running &amp;&amp; inputProcessor.processInput()) {
+        ;
+    }
+
+}
+</code></pre>
+
+<h3 id="5-processinput-streaminputprocessor">5. processInput() - StreamInputProcessor</h3>
+
+<pre><code>	numRecordsIn.inc();
+	streamOperator.setKeyContextElement1(record);
+	streamOperator.processElement(record);
+</code></pre>
+
+<h3 id="6-processelement-streamgroupedreduce">6. processElement() - StreamGroupedReduce</h3>
+
+<pre><code>	public void processElement(StreamRecord&lt;IN&gt; element) throws Exception {
+		IN value = element.getValue();
+		IN currentValue = values.value();
+
+		if (currentValue != null) {
+			IN reduced = userFunction.reduce(currentValue, value);
+			values.update(reduced);
+			output.collect(element.replace(reduced));
+		} else {
+			values.update(value);
+			
+			// output是OperatorChain
+			output.collect(element.replace(value));
+		}
+	}
+</code></pre>
+
+<h3 id="7-collect-abstractstreamoperator">7. collect() - AbstractStreamOperator</h3>
+
+<h3 id="8-collect-operatorchain-1">8. collect() - OperatorChain</h3>
+
+<pre><code>public void collect(StreamRecord&lt;T&gt; record) {
+	if (this.outputTag != null) {
+		// we are only responsible for emitting to the main input
+		return;
+	}
+	//这个时候this.operator是StreamSink
+	pushToOperator(record);
+}
+
+</code></pre>
+
+<p>record是(to,1)</p>
+
+<pre><code>protected &lt;X&gt; void pushToOperator(StreamRecord&lt;X&gt; record) {
+	try {
+		// we know that the given outputTag matches our OutputTag so the record
+		// must be of the type that our operator expects.
+		@SuppressWarnings(&quot;unchecked&quot;)
+		StreamRecord&lt;T&gt; castRecord = (StreamRecord&lt;T&gt;) record;
+
+		numRecordsIn.inc();
+		operator.setKeyContextElement1(castRecord);
+		operator.processElement(castRecord);
+	}
+	catch (Exception e) {
+		throw new ExceptionInChainedOperatorException(e);
+	}
+}
+</code></pre>
+
+<h3 id="9-processelement-streamsink-operator">9. ProcessElement() - StreamSink (operator)</h3>
+
+<pre><code>	public void processElement(StreamRecord&lt;IN&gt; element) throws Exception {
+		sinkContext.element = element;
+		userFunction.invoke(element.getValue(), sinkContext);
+	}
+</code></pre>
+
+<h3 id="10-invoke-printsinkfunction-funtion">10. invoke() - PrintSinkFunction (funtion)</h3>
+
+<pre><code>	@Override
+	public void invoke(IN record) {
+		if (prefix != null) {
+			stream.println(prefix + record.toString());
+		}
+		else {
+			stream.println(record.toString());
+		}
+	}
 </code></pre>
     </div>
 
@@ -537,6 +661,11 @@ try {
       
       <nav class="post-nav">
         
+          <a class="prev" href="lmsreborn.github.io/post/shortcut/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Shortcut</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         
           <a class="next" href="lmsreborn.github.io/post/slot/">
             <span class="next-text nav-default">Slot</span>
@@ -572,7 +701,9 @@ try {
 
   <span class="copyright-year">
     &copy; 
-    2017
+    
+      2017 - 
+    2018
     <span class="heart">
       <i class="iconfont icon-heart"></i>
     </span>

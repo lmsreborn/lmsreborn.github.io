@@ -1,6 +1,15 @@
 <!--more-->
-# Process of submitTask 
-## 1. task.startTaskThread() -> executingThread.start() -> 调用Task的run方法in TaskManager - TaskManager
+
+
+以wordCount为例，taskManager收到两个task: 
+
+1. **Source: Collection Source -> Flat Map**
+2. **Keyed Aggregation -> Sink**
+
+
+## Task - Overview
+
+### 1. task.startTaskThread() -> executingThread.start() -> 调用Task的run方法in TaskManager - TaskManager
 
 因为创建一个task中有一段
 
@@ -11,7 +20,7 @@ executingThread = new Thread(TASK_THREADS_GROUP, this, taskNameWithSubtask);
 
 ```
 
-## 2. run() - Task
+### 2. run() - Task
 
 
 ```
@@ -201,7 +210,7 @@ try {
 	invokable = loadAndInstantiateInvokable(userCodeClassLoader, nameOfInvokableClass);
 ```
 
-## 3. invokable.invoke() - StreamTask
+### 3. invokable.invoke() - StreamTask
 ```
  *  -- invoke()
  *        |
@@ -218,7 +227,9 @@ try {
 
 ```
 
-## 4. run() - SourceStreamTask (StreamTask)
+******************
+## Task - Source: Collection Source -> Flat Map 
+### 4. run() - SourceStreamTask (StreamTask)
 
 
 ```
@@ -227,7 +238,7 @@ protected void run() throws Exception {
 }
 ```
 
-## 5. run() - StreamSource (operator)
+### 5. run() - StreamSource (operator)
 
 ```
 this.ctx = StreamSourceContexts.getSourceContext(timeCharacteristic,
@@ -242,7 +253,7 @@ try {
 	userFunction.run(ctx);
 ```
 
-## 6. run() - FromElementsFunction (function)
+### 6. run() - FromElementsFunction (function)
 
 ```
 while (isRunning && numElementsEmitted < numElements) {
@@ -263,7 +274,7 @@ while (isRunning && numElementsEmitted < numElements) {
 }
 ```
 
-## 7. collect() - StreamSourceContexts
+### 7. collect() - StreamSourceContexts
 
 ```
 public void collect(T element) {
@@ -275,7 +286,7 @@ public void collect(T element) {
 ```
 其中,output就是**OperatorChain**
 
-## 8. collect() - OperatorChain
+### 8. collect() - OperatorChain
 
 ```
 public void collect(StreamRecord<T> record) {
@@ -311,7 +322,7 @@ protected <X> void pushToOperator(StreamRecord<X> record) {
 	
 其中operator就是flatmap
 
-## 9. processElement() - StreamFlatMap (operator)
+### 9. processElement() - StreamFlatMap (operator)
 
 ```
 public void processElement(StreamRecord<IN> element) throws Exception {
@@ -339,8 +350,104 @@ public static final class Tokenizer implements FlatMapFunction<String, Tuple2<St
 	}
 }
 ```
+---------------------
+## Task - Keyed Aggregation -> Sink
 
 
+### 4. run() - OneInputStreamTask
+```
+protected void run() throws Exception {
+    StreamInputProcessor inputProcessor = this.inputProcessor;
 
+    while(this.running && inputProcessor.processInput()) {
+        ;
+    }
+
+}
+```
+
+### 5. processInput() - StreamInputProcessor
+```
+	numRecordsIn.inc();
+	streamOperator.setKeyContextElement1(record);
+	streamOperator.processElement(record);
+```
+
+### 6. processElement() - StreamGroupedReduce
+
+```
+	public void processElement(StreamRecord<IN> element) throws Exception {
+		IN value = element.getValue();
+		IN currentValue = values.value();
+
+		if (currentValue != null) {
+			IN reduced = userFunction.reduce(currentValue, value);
+			values.update(reduced);
+			output.collect(element.replace(reduced));
+		} else {
+			values.update(value);
+			
+			// output是OperatorChain
+			output.collect(element.replace(value));
+		}
+	}
+```
+
+### 7. collect() - AbstractStreamOperator
+
+### 8. collect() - OperatorChain
+```
+public void collect(StreamRecord<T> record) {
+	if (this.outputTag != null) {
+		// we are only responsible for emitting to the main input
+		return;
+	}
+	//这个时候this.operator是StreamSink
+	pushToOperator(record);
+}
+
+```
+
+record是(to,1)
+
+```
+protected <X> void pushToOperator(StreamRecord<X> record) {
+	try {
+		// we know that the given outputTag matches our OutputTag so the record
+		// must be of the type that our operator expects.
+		@SuppressWarnings("unchecked")
+		StreamRecord<T> castRecord = (StreamRecord<T>) record;
+
+		numRecordsIn.inc();
+		operator.setKeyContextElement1(castRecord);
+		operator.processElement(castRecord);
+	}
+	catch (Exception e) {
+		throw new ExceptionInChainedOperatorException(e);
+	}
+}
+```
+
+### 9. ProcessElement() - StreamSink (operator)
+
+```
+	public void processElement(StreamRecord<IN> element) throws Exception {
+		sinkContext.element = element;
+		userFunction.invoke(element.getValue(), sinkContext);
+	}
+```
+### 10. invoke() - PrintSinkFunction (funtion)
+
+```
+	@Override
+	public void invoke(IN record) {
+		if (prefix != null) {
+			stream.println(prefix + record.toString());
+		}
+		else {
+			stream.println(record.toString());
+		}
+	}
+```
 
 

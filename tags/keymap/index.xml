@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Keymap on lms&#39;s blog</title>
+    <link>lmsreborn.github.io/tags/keymap/</link>
+    <description>Recent content in Keymap on lms&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 16 Dec 2017 00:35:18 +0800</lastBuildDate>
+    
+	<atom:link href="lmsreborn.github.io/tags/keymap/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Shortcut</title>
+      <link>lmsreborn.github.io/post/shortcut/</link>
+      <pubDate>Sat, 16 Dec 2017 00:35:18 +0800</pubDate>
+      
+      <guid>lmsreborn.github.io/post/shortcut/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

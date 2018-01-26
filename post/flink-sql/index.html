@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Blob - lms&#39;s blog</title>
+  <title>Flink SQL - lms&#39;s blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -17,7 +17,8 @@
 
 
 <meta name="author" content="lms" />
-  <meta name="description" content="" />
+  <meta name="description" content="
+" />
 
   <meta name="keywords" content="Hugo, theme, even" />
 
@@ -29,7 +30,7 @@
 <meta name="generator" content="Hugo 0.27.1" />
 
 
-<link rel="canonical" href="lmsreborn.github.io/post/blob/" />
+<link rel="canonical" href="lmsreborn.github.io/post/flink-sql/" />
 
 <link rel="apple-touch-icon" sizes="180x180" href="/lmsreborn.github.io/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/lmsreborn.github.io/favicon-32x32.png">
@@ -44,19 +45,15 @@
 <link href="/lmsreborn.github.io/dist/even.min.css?v=2.7.0" rel="stylesheet">
 <link href="/lmsreborn.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
 
-<meta property="og:title" content="Blob" />
+<meta property="og:title" content="Flink SQL" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="lmsreborn.github.io/post/blob/" />
+<meta property="og:url" content="lmsreborn.github.io/post/flink-sql/" />
 
 
 
-<meta property="article:published_time" content="2017-12-09T23:17:44&#43;08:00"/>
-<meta property="article:modified_time" content="2017-12-09T23:17:44&#43;08:00"/>
-
-
-
-
+<meta property="article:published_time" content="2018-01-25T19:10:25&#43;08:00"/>
+<meta property="article:modified_time" content="2018-01-25T19:10:25&#43;08:00"/>
 
 
 
@@ -64,17 +61,21 @@
 
 
 
-<meta itemprop="name" content="Blob">
+
+
+
+
+<meta itemprop="name" content="Flink SQL">
 <meta itemprop="description" content="">
 
 
-<meta itemprop="dateModified" content="2017-12-09T23:17:44&#43;08:00" />
-<meta itemprop="wordCount" content="154">
+<meta itemprop="dateModified" content="2018-01-25T19:10:25&#43;08:00" />
+<meta itemprop="wordCount" content="140">
 
 
 
-<meta itemprop="keywords" content="Flink," />
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Blob"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Flink SQL"/>
 <meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
@@ -138,15 +139,11 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Blob</h1>
+      <h1 class="post-title">Flink SQL</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2017-12-09 </span>
-        <div class="post-category">
-            
-              <a href="/lmsreborn.github.io/categories/flink/"> Flink </a>
-            
-          </div>
+        <span class="post-time"> 2018-01-25 </span>
+        
         
       </div>
     </header>
@@ -156,22 +153,22 @@
 <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   
-  <div class="post-toc-content always-active">
+  <div class="post-toc-content">
     <nav id="TableOfContents">
-<ul>
-<li><a href="#1-blobserver">1. BlobServer</a>
-<ul>
-<li><a href="#1-blobkey">1. BlobKey</a></li>
-<li><a href="#2-blobserverconnection">2. BlobServerConnection</a></li>
-</ul></li>
-<li><a href="#4-blobcacheservice-in-taskmanager">4. BlobCacheService (in TaskManager)</a>
 <ul>
 <li>
 <ul>
-<li><a href="#1-permanentblobcache">1. PermanentBlobCache</a></li>
-<li><a href="#2-transientblobcache">2. TransientBlobCache</a></li>
+<li><a href="#table">Table</a>
+<ul>
+<li><a href="#tableenvironment">TableEnvironment</a></li>
+<li><a href="#logicalnode">LogicalNode</a></li>
 </ul></li>
-<li><a href="#5-protocol">5. Protocol</a></li>
+<li><a href="#logic">Logic</a></li>
+<li><a href="#datastreamcalc">DataStreamCalc</a>
+<ul>
+<li><a href="#第一个transformation">第一个transformation</a></li>
+<li><a href="#第二个transformation">第二个transformation</a></li>
+</ul></li>
 </ul></li>
 </ul>
 </nav>
@@ -180,185 +177,87 @@
 
     
     <div class="post-content">
-      <p>
-<em>Attention: The code is based on Flink 1.5</em></p>
+      <p></p>
 
-<p>[](img/blob.png)</p>
-
-<h1 id="1-blobserver">1. BlobServer</h1>
-
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>type</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><strong>storageDir</strong></td>
-<td>File</td>
-</tr>
-
-<tr>
-<td><strong>blobStore</strong></td>
-<td>BlobStore</td>
-</tr>
-
-<tr>
-<td><strong>activeConnections</strong></td>
-<td>Set&lt;BlobServerConnection&gt;</td>
-</tr>
-
-<tr>
-<td><strong>cleanupTimer</strong></td>
-<td>Timer</td>
-</tr>
-
-<tr>
-<td><strong>blobExpiryTimes</strong></td>
-<td>ConcurrentHashMap&lt;Tuple2&lt;JobID, TransientBlobKey&gt;, Long&gt;</td>
-</tr>
-
-<tr>
-<td><strong>shutdownHook</strong></td>
-<td>Thread</td>
-</tr>
-
-<tr>
-<td><strong>cleanTimer</strong></td>
-<td>Timer</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="1-blobkey">1. BlobKey</h2>
-
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>type</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><strong>Key</strong></td>
-<td>byte[20]</td>
-</tr>
-
-<tr>
-<td><strong>type</strong></td>
-<td>PERMANENT_BLOB or TRANSIENT_BLOB</td>
-</tr>
-
-<tr>
-<td><strong>random</strong></td>
-<td>AbstractID (<code>long</code> + <code>long</code>)</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="2-blobserverconnection">2. BlobServerConnection</h2>
-
-<h1 id="4-blobcacheservice-in-taskmanager">4. BlobCacheService (in TaskManager)</h1>
-
-<table>
-<thead>
-<tr>
-<th>Valye</th>
-<th>type</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><strong>permanentBlobCache</strong></td>
-<td>PermanentBlobCache</td>
-</tr>
-
-<tr>
-<td><strong>transientBlobCache</strong></td>
-<td>TransientBlobCache</td>
-</tr>
-</tbody>
-</table>
-
-<h3 id="1-permanentblobcache">1. PermanentBlobCache</h3>
-
-<pre><code>static class RefCount {
-	public int references = 0;
-	public long keepUntil = -1;
-	}
-	
-private final Map&lt;JobID, RefCount&gt; jobRefCounters = new HashMap&lt;&gt;();
-private final long cleanupInterval;
-private final Timer cleanupTimer;
-</code></pre>
-
-<h3 id="2-transientblobcache">2. TransientBlobCache</h3>
-
-<pre><code>private final ConcurrentHashMap&lt;Tuple2&lt;JobID, TransientBlobKey&gt;, Long&gt; blobExpiryTimes =
-		new ConcurrentHashMap&lt;&gt;()
-private final long cleanupInterval;
-private final Timer cleanupTimer;
-</code></pre>
-
-<h2 id="5-protocol">5. Protocol</h2>
+<h2 id="table">Table</h2>
 
 <ul>
-<li>sender:</li>
+<li>tableEnv: TableEnvironment</li>
+<li>logicalPlan: LogicalNode</li>
+<li>tableSchema</li>
+<li>tableName</li>
 </ul>
 
-<table>
-<thead>
-<tr>
-<th>PUT(GET)_OPERATION</th>
-<th>JOB_UNRELATED_CONTENT</th>
-</tr>
-</thead>
+<h3 id="tableenvironment">TableEnvironment</h3>
 
-<tbody>
-<tr>
-<td>1 byte</td>
-<td>1 byte</td>
-</tr>
-</tbody>
-</table>
+<h3 id="logicalnode">LogicalNode</h3>
 
-<p>or</p>
+<ol>
+<li>relNode</li>
+<li>output</li>
+</ol>
 
-<table>
-<thead>
-<tr>
-<th>PUT(GET)_OPERATION</th>
-<th>JOB_RELATED_CONTENT</th>
-<th>JobID</th>
-<th>BlobType</th>
-</tr>
-</thead>
+<h2 id="logic">Logic</h2>
 
-<tbody>
-<tr>
-<td>1 byte</td>
-<td>1 byte</td>
-<td>long + long</td>
-<td>PERMANENT_BLOB or TRANSIENT_BLOB</td>
-</tr>
-</tbody>
-</table>
+<ol>
+<li><p>planner.parse(query)</p>
+
+<ol>
+<li>val parser: SqlParser = SqlParser.create(sql, parserConfig)</li>
+<li>val sqlNode: SqlNode = parser.parseStmt
+<br /></li>
+</ol>
 
 <ul>
-<li>receiver:
-| RETURN_OKAY | BlobKey |
-| &mdash; | &mdash; |</li>
-</ul>
+<li>SQLNode
 
-<p>or
-| &mdash; | &mdash; |
-| RETURN_ERROR | BlobKey |</p>
+<ul>
+<li>operator: e.g Union All</li>
+<li>operands: 两个语句
+<br /></li>
+</ul></li>
+</ul></li>
+
+<li><p>val validated = planner.validate(parsed)</p></li>
+
+<li><p>val relational = planner.rel(validated)// transform to a relational tree</p>
+
+<ol>
+<li>sqlToRelConverter.convertQuery(validatedSqlNode, false, true)</li>
+</ol></li>
+</ol>
+
+<h2 id="datastreamcalc">DataStreamCalc</h2>
+
+<ul>
+<li><p>translateToPlan</p>
+
+<ol>
+<li>第一个transformation
+<code>
+val inputDataStream =
+getInput.asInstanceOf[DataStreamRel].translateToPlan(tableEnv, queryConfig)
+</code></li>
+<li>第二个transformation
+<code>
+inputDataStream.process(processFunc)
+.name(calcOpName(calcProgram, getExpressionString))
+// keep parallelism to ensure order of accumulate and retract messages
+.setParallelism(inputParallelism)
+</code>
+<br /></li>
+</ol>
+
+<h3 id="第一个transformation">第一个transformation</h3>
+
+<p><img src="/img/trans_1.png" alt="" />
+<img src="/img/trans_1_2.png" alt="" /></p>
+
+<h3 id="第二个transformation">第二个transformation</h3>
+
+<p><img src="/img/trans_2.png" alt="" />
+<img src="/img/trans_2_2.png" alt="" /></p></li>
+</ul>
     </div>
 
     
@@ -370,7 +269,7 @@ private final Timer cleanupTimer;
   </p>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
-    <span class="item-content">2017-12-09</span>
+    <span class="item-content">2018-01-25</span>
   </p>
   
   <p class="copyright-item">
@@ -383,23 +282,14 @@ private final Timer cleanupTimer;
     
 
     <footer class="post-footer">
-      <div class="post-tags">
-          
-          <a href="/lmsreborn.github.io/tags/flink/">Flink</a>
-          
-        </div>
+      
 
       
       <nav class="post-nav">
         
-          <a class="prev" href="lmsreborn.github.io/post/instance/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Instance</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
         
-          <a class="next" href="lmsreborn.github.io/post/flink/checkpoint/">
-            <span class="next-text nav-default"></span>
+          <a class="next" href="lmsreborn.github.io/post/shortcut/">
+            <span class="next-text nav-default">Shortcut</span>
             <span class="prev-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

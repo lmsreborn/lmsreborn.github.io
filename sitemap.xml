@@ -3,6 +3,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>lmsreborn.github.io/post/flink-sql/</loc>
+    <lastmod>2018-01-25T19:10:25+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>lmsreborn.github.io/post/shortcut/</loc>
+    <lastmod>2017-12-16T00:35:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>lmsreborn.github.io/post/submittask/</loc>
     <lastmod>2017-12-14T20:14:21+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -38,6 +52,12 @@
   </url>
   
   <url>
+    <loc>lmsreborn.github.io/post/flink/checkpoint/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>lmsreborn.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -58,8 +78,15 @@
   </url>
   
   <url>
+    <loc>lmsreborn.github.io/tags/keymap/</loc>
+    <lastmod>2017-12-16T00:35:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>lmsreborn.github.io/post/</loc>
-    <lastmod>2017-12-14T20:14:21+08:00</lastmod>
+    <lastmod>2018-01-25T19:10:25+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -73,7 +100,7 @@
   
   <url>
     <loc>lmsreborn.github.io/</loc>
-    <lastmod>2017-12-14T20:14:21+08:00</lastmod>
+    <lastmod>2018-01-25T19:10:25+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
