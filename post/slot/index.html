@@ -70,11 +70,11 @@
 
 
 <meta itemprop="dateModified" content="2017-12-11T19:09:03&#43;08:00" />
-<meta itemprop="wordCount" content="49">
+<meta itemprop="wordCount" content="123">
 
 
 
-<meta itemprop="keywords" content="" />
+<meta itemprop="keywords" content="Flink," />
 <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Slot"/>
 <meta name="twitter:description" content=""/>
 
@@ -143,7 +143,11 @@
 
       <div class="post-meta">
         <span class="post-time"> 2017-12-11 </span>
-        
+        <div class="post-category">
+            
+              <a href="/lmsreborn.github.io/categories/flink/"> Flink </a>
+            
+          </div>
         
       </div>
     </header>
@@ -156,9 +160,9 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
 <ul>
-<li><a href="#1-resourceid">1. ResourceID</a></li>
+<li><a href="#1-slot">1. Slot</a></li>
 <li><a href="#3-slotid">3. SlotID</a></li>
-<li><a href="#4-allocatedslot">4. AllocatedSlot</a>
+<li><a href="#4-span-id-allocatedslot-allocatedslot-span">4. <span id="AllocatedSlot">AllocatedSlot</span></a>
 <ul>
 <li><a href="#1-allocationid">1. AllocationID</a></li>
 <li><a href="#2-test">2.test</a></li>
@@ -172,21 +176,40 @@
     <div class="post-content">
       <p></p>
 
-<h1 id="1-resourceid">1. ResourceID</h1>
+<h1 id="1-slot">1. Slot</h1>
 
-<p>Only one part: resourceId : string.</p>
+<p><img src="/img/Slot.jpg" alt="" /></p>
+
+<ul>
+<li><p>state: slot自身的状态</p>
+
+<ul>
+<li><strong>ALLOCATED_AND_ALIVE</strong></li>
+<li><strong>CANCELLED</strong>: State where the slot has been canceled and is in the process of being released</li>
+<li><strong>RELEASED</strong>: State where all tasks in this slot have been canceled and the slot been given back to the instance
+<br /></li>
+</ul></li>
+
+<li><p>allocationID:</p></li>
+
+<li><p><a href="#AllocatedSlot">allocatedSlot</a></p></li>
+
+<li><p><a href="#SharedSlot">parent</a>: The parent of this slot in the hierarchy, or null, if this is the parent</p></li>
+
+<li><p>groupID: The id of the group that this slot is allocated to. May be null.</p></li>
+</ul>
 
 <h1 id="3-slotid">3. SlotID</h1>
 
 <p>SlotID</p>
 
-<h1 id="4-allocatedslot">4. AllocatedSlot</h1>
+<h1 id="4-span-id-allocatedslot-allocatedslot-span">4. <span id="AllocatedSlot">AllocatedSlot</span></h1>
 
 <p><img src="/img/AllocatedSlot.jpg" alt="" /></p>
 
 <h2 id="1-allocationid">1. AllocationID</h2>
 
-<p>Slot allocation identifier, created by the JobManager when requesting a slot, constant across re-tries. Used to identify responses by the ResourceManager and to identify deployment calls towards the TaskManager that was allocated from</p>
+<p>Slot allocation identifier, created by the JobManager when requesting a slot, constant across re-tries. Used to identify responses by the ResourceManager and to identify deployment calls towards the TaskManager that was allocated from.</p>
 
 <h2 id="2-test">2.test</h2>
     </div>
@@ -213,11 +236,20 @@
     
 
     <footer class="post-footer">
-      
+      <div class="post-tags">
+          
+          <a href="/lmsreborn.github.io/tags/flink/">Flink</a>
+          
+        </div>
 
       
       <nav class="post-nav">
         
+          <a class="prev" href="lmsreborn.github.io/post/submittask/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">SubmitTask</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         
           <a class="next" href="lmsreborn.github.io/post/scheduler/">
             <span class="next-text nav-default">Scheduler</span>

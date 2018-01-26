@@ -69,7 +69,7 @@
 
 
 <meta itemprop="dateModified" content="2017-12-09T23:17:44&#43;08:00" />
-<meta itemprop="wordCount" content="153">
+<meta itemprop="wordCount" content="154">
 
 
 
@@ -159,12 +159,14 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
 <ul>
-<li>
+<li><a href="#1-blobserver">1. BlobServer</a>
 <ul>
 <li><a href="#1-blobkey">1. BlobKey</a></li>
 <li><a href="#2-blobserverconnection">2. BlobServerConnection</a></li>
-<li><a href="#3-blobserver">3. BlobServer</a></li>
+</ul></li>
 <li><a href="#4-blobcacheservice-in-taskmanager">4. BlobCacheService (in TaskManager)</a>
+<ul>
+<li>
 <ul>
 <li><a href="#1-permanentblobcache">1. PermanentBlobCache</a></li>
 <li><a href="#2-transientblobcache">2. TransientBlobCache</a></li>
@@ -181,37 +183,9 @@
       <p>
 <em>Attention: The code is based on Flink 1.5</em></p>
 
-<h2 id="1-blobkey">1. BlobKey</h2>
+<p>[](img/blob.png)</p>
 
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>type</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td><strong>Key</strong></td>
-<td>byte[20]</td>
-</tr>
-
-<tr>
-<td><strong>type</strong></td>
-<td>PERMANENT_BLOB or TRANSIENT_BLOB</td>
-</tr>
-
-<tr>
-<td><strong>random</strong></td>
-<td>AbstractID (<code>long</code> + <code>long</code>)</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="2-blobserverconnection">2. BlobServerConnection</h2>
-
-<h2 id="3-blobserver">3. BlobServer</h2>
+<h1 id="1-blobserver">1. BlobServer</h1>
 
 <table>
 <thead>
@@ -259,7 +233,37 @@
 </tbody>
 </table>
 
-<h2 id="4-blobcacheservice-in-taskmanager">4. BlobCacheService (in TaskManager)</h2>
+<h2 id="1-blobkey">1. BlobKey</h2>
+
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>type</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>Key</strong></td>
+<td>byte[20]</td>
+</tr>
+
+<tr>
+<td><strong>type</strong></td>
+<td>PERMANENT_BLOB or TRANSIENT_BLOB</td>
+</tr>
+
+<tr>
+<td><strong>random</strong></td>
+<td>AbstractID (<code>long</code> + <code>long</code>)</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="2-blobserverconnection">2. BlobServerConnection</h2>
+
+<h1 id="4-blobcacheservice-in-taskmanager">4. BlobCacheService (in TaskManager)</h1>
 
 <table>
 <thead>

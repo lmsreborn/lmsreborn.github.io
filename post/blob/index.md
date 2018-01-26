@@ -1,16 +1,13 @@
 <!--more-->
 *Attention: The code is based on Flink 1.5*
-## 1. BlobKey
 
-| Value | type |
-| --- | --- |
-| **Key** | byte[20] |
-| **type** | PERMANENT_BLOB or TRANSIENT_BLOB |
-| **random** | AbstractID (```long``` + ```long```) |
+[](img/blob.png)
 
-## 2. BlobServerConnection
+## 
 
-## 3. BlobServer
+
+
+# 1. BlobServer
 
 
 | Value | type |
@@ -23,7 +20,17 @@
 | **shutdownHook** | Thread |
 | **cleanTimer** | Timer |
 
-## 4. BlobCacheService (in TaskManager)
+## 1. BlobKey
+
+| Value | type |
+| --- | --- |
+| **Key** | byte[20] |
+| **type** | PERMANENT_BLOB or TRANSIENT_BLOB |
+| **random** | AbstractID (```long``` + ```long```) |
+
+## 2. BlobServerConnection
+
+# 4. BlobCacheService (in TaskManager)
 
 | Valye | type |
 | --- | --- |

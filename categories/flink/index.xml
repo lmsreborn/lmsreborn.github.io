@@ -6,10 +6,19 @@
     <description>Recent content in Flink on lms&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 09 Dec 2017 23:17:44 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Dec 2017 19:09:03 +0800</lastBuildDate>
     
 	<atom:link href="lmsreborn.github.io/categories/flink/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Slot</title>
+      <link>lmsreborn.github.io/post/slot/</link>
+      <pubDate>Mon, 11 Dec 2017 19:09:03 +0800</pubDate>
+      
+      <guid>lmsreborn.github.io/post/slot/</guid>
+      <description>&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Blob</title>

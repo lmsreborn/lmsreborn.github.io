@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>SubmitTask - lms&#39;s blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="lms" />
+  <meta name="description" content="
+" />
+
+  <meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.27.1" />
+
+
+<link rel="canonical" href="lmsreborn.github.io/post/submittask/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/lmsreborn.github.io/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/lmsreborn.github.io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/lmsreborn.github.io/favicon-16x16.png">
+<link rel="icon" href="/lmsreborn.github.io/favicon.ico" />
+<link rel="manifest" href="/lmsreborn.github.io/manifest.json">
+<link rel="mask-icon" href="/lmsreborn.github.io/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<link href="/lmsreborn.github.io/dist/even.min.css?v=2.7.0" rel="stylesheet">
+<link href="/lmsreborn.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+<meta property="og:title" content="SubmitTask" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="lmsreborn.github.io/post/submittask/" />
+
+
+
+<meta property="article:published_time" content="2017-12-14T20:14:21&#43;08:00"/>
+<meta property="article:modified_time" content="2017-12-14T20:14:21&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="SubmitTask">
+<meta itemprop="description" content="">
+
+
+<meta itemprop="dateModified" content="2017-12-14T20:14:21&#43;08:00" />
+<meta itemprop="wordCount" content="1214">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="SubmitTask"/>
+<meta name="twitter:description" content=""/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/lmsreborn.github.io/" class="logo">lms_research</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="lmsreborn.github.io/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="lmsreborn.github.io/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="lmsreborn.github.io/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="lmsreborn.github.io/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/lmsreborn.github.io/" class="logo">lms_research</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="lmsreborn.github.io/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="lmsreborn.github.io/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="lmsreborn.github.io/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="lmsreborn.github.io/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">SubmitTask</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2017-12-14 </span>
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#process-of-submittask">Process of submitTask</a>
+<ul>
+<li><a href="#1-task-starttaskthread-executingthread-start-调用task的run方法in-taskmanager-taskmanager">1. task.startTaskThread() -&gt; executingThread.start() -&gt; 调用Task的run方法in TaskManager - TaskManager</a></li>
+<li><a href="#2-run-task">2. run() - Task</a></li>
+<li><a href="#3-invokable-invoke-streamtask">3. invokable.invoke() - StreamTask</a></li>
+<li><a href="#4-run-sourcestreamtask-streamtask">4. run() - SourceStreamTask (StreamTask)</a></li>
+<li><a href="#5-run-streamsource-operator">5. run() - StreamSource (operator)</a></li>
+<li><a href="#6-run-fromelementsfunction-function">6. run() - FromElementsFunction (function)</a></li>
+<li><a href="#7-collect-streamsourcecontexts">7. collect() - StreamSourceContexts</a></li>
+<li><a href="#8-collect-operatorchain">8. collect() - OperatorChain</a></li>
+<li><a href="#9-processelement-streamflatmap-operator">9. processElement() - StreamFlatMap (operator)</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p></p>
+
+<h1 id="process-of-submittask">Process of submitTask</h1>
+
+<h2 id="1-task-starttaskthread-executingthread-start-调用task的run方法in-taskmanager-taskmanager">1. task.startTaskThread() -&gt; executingThread.start() -&gt; 调用Task的run方法in TaskManager - TaskManager</h2>
+
+<p>因为创建一个task中有一段</p>
+
+<pre><code class="language-java">
+//this指的是Task，Task implements Runnable
+executingThread = new Thread(TASK_THREADS_GROUP, this, taskNameWithSubtask);
+
+</code></pre>
+
+<h2 id="2-run-task">2. run() - Task</h2>
+
+<pre><code>try {
+	// ----------------------------
+	//  Task Bootstrap - We periodically
+	//  check for canceling as a shortcut
+	// ----------------------------
+
+	// activate safety net for task thread
+	LOG.info(&quot;Creating FileSystem stream leak safety net for task {}&quot;, this);
+	FileSystemSafetyNet.initializeSafetyNetForThread();
+
+  // 处理job引用计数
+	blobService.getPermanentBlobService().registerJob(jobId);
+
+	// first of all, get a user-code classloader
+	// this may involve downloading the job's JAR files and/or classes
+	LOG.info(&quot;Loading JAR files for task {}.&quot;, this);
+
+   // 包含去JobManager下载Jar包的逻辑
+	userCodeClassLoader = createUserCodeClassloader();
+	final ExecutionConfig executionConfig = serializedExecutionConfig.deserializeValue(userCodeClassLoader);
+
+	if (executionConfig.getTaskCancellationInterval() &gt;= 0) {
+		// override task cancellation interval from Flink config if set in ExecutionConfig
+		taskCancellationInterval = executionConfig.getTaskCancellationInterval();
+	}
+
+	if (executionConfig.getTaskCancellationTimeout() &gt;= 0) {
+		// override task cancellation timeout from Flink config if set in ExecutionConfig
+		taskCancellationTimeout = executionConfig.getTaskCancellationTimeout();
+	}
+
+	// now load the task's invokable code
+	// 反射创建实例
+	invokable = loadAndInstantiateInvokable(userCodeClassLoader, nameOfInvokableClass);
+
+	// ----------------------------------------------------------------
+	// register the task with the network stack
+	// this operation may fail if the system does not have enough
+	// memory to run the necessary data exchanges
+	// the registration must also strictly be undone
+	// ----------------------------------------------------------------
+
+	LOG.info(&quot;Registering task at network: {}.&quot;, this);
+
+   // 为ResultPartition和inputGate分配内存
+	network.registerTask(this);
+	
+	...
+
+	// next, kick off the background copying of files for the distributed cache
+	try {
+		for (Map.Entry&lt;String, DistributedCache.DistributedCacheEntry&gt; entry :
+				DistributedCache.readFileInfoFromConfig(jobConfiguration))
+		{
+			LOG.info(&quot;Obtaining local cache file for '{}'.&quot;, entry.getKey());
+			Future&lt;Path&gt; cp = fileCache.createTmpFile(entry.getKey(), entry.getValue(), jobId);
+			distributedCacheEntries.put(entry.getKey(), cp);
+		}
+	}
+	catch (Exception e) {
+		throw new Exception(
+			String.format(&quot;Exception while adding files to distributed cache of task %s (%s).&quot;, taskNameWithSubtask, executionId),
+			e);
+	}
+
+	if (isCanceledOrFailed()) {
+		throw new CancelTaskException();
+	}
+
+	// ----------------------------------------------------------------
+	//  call the user code initialization methods
+	// ----------------------------------------------------------------
+
+	TaskKvStateRegistry kvStateRegistry = network
+			.createKvStateTaskRegistry(jobId, getJobVertexId());
+
+	Environment env = new RuntimeEnvironment(
+		jobId,
+		vertexId,
+		executionId,
+		executionConfig,
+		taskInfo,
+		jobConfiguration,
+		taskConfiguration,
+		userCodeClassLoader,
+		memoryManager,
+		ioManager,
+		broadcastVariableManager,
+		accumulatorRegistry,
+		kvStateRegistry,
+		inputSplitProvider,
+		distributedCacheEntries,
+		producedPartitions,
+		inputGates,
+		network.getTaskEventDispatcher(),
+		checkpointResponder,
+		taskManagerConfig,
+		metrics,
+		this);
+
+	// let the task code create its readers and writers
+	invokable.setEnvironment(env);
+
+	// the very last thing before the actual execution starts running is to inject
+	// the state into the task. the state is non-empty if this is an execution
+	// of a task that failed but had backuped state from a checkpoint
+
+	if (null != taskStateHandles) {
+		if (invokable instanceof StatefulTask) {
+			StatefulTask op = (StatefulTask) invokable;
+			op.setInitialState(taskStateHandles);
+		} else {
+			throw new IllegalStateException(&quot;Found operator state for a non-stateful task invokable&quot;);
+		}
+		// be memory and GC friendly - since the code stays in invoke() for a potentially long time,
+		// we clear the reference to the state handle
+		//noinspection UnusedAssignment
+		taskStateHandles = null;
+	}
+
+	// ----------------------------------------------------------------
+	//  actual task core work
+	// ----------------------------------------------------------------
+
+	// we must make strictly sure that the invokable is accessible to the cancel() call
+	// by the time we switched to running.
+	this.invokable = invokable;
+
+	// switch to the RUNNING state, if that fails, we have been canceled/failed in the meantime
+	if (!transitionState(ExecutionState.DEPLOYING, ExecutionState.RUNNING)) {
+		throw new CancelTaskException();
+	}
+
+	// notify everyone that we switched to running
+	notifyObservers(ExecutionState.RUNNING, null);
+
+	// ----------------------- 调度: from DEPLOYING to RUNNING.-------------------------
+	taskManagerActions.updateTaskExecutionState(new TaskExecutionState(jobId, executionId, ExecutionState.RUNNING));
+
+	// make sure the user code classloader is accessible thread-locally
+	executingThread.setContextClassLoader(userCodeClassLoader);
+
+	// run the invokable
+	invokable.invoke();
+
+	// make sure, we enter the catch block if the task leaves the invoke() method due
+	// to the fact that it has been canceled
+	if (isCanceledOrFailed()) {
+		throw new CancelTaskException();
+	}
+
+	// ----------------------------------------------------------------
+	//  finalization of a successful execution
+	// ----------------------------------------------------------------
+
+	// finish the produced partitions. if this fails, we consider the execution failed.
+	for (ResultPartition partition : producedPartitions) {
+		if (partition != null) {
+			partition.finish();
+		}
+	}
+
+	// try to mark the task as finished
+	// if that fails, the task was canceled/failed in the meantime
+	if (transitionState(ExecutionState.RUNNING, ExecutionState.FINISHED)) {
+		notifyObservers(ExecutionState.FINISHED, null);
+	}
+	else {
+		throw new CancelTaskException();
+	}
+}
+
+</code></pre>
+
+<p><strong>Attention:</strong></p>
+
+<ol>
+<li>包含去JobManager下载Jar包的逻辑
+<code>
+	userCodeClassLoader = createUserCodeClassloader();
+</code></li>
+<li>反射创建实例</li>
+</ol>
+
+<pre><code>	invokable = loadAndInstantiateInvokable(userCodeClassLoader, nameOfInvokableClass);
+</code></pre>
+
+<h2 id="3-invokable-invoke-streamtask">3. invokable.invoke() - StreamTask</h2>
+
+<pre><code> *  -- invoke()
+ *        |
+ *        +----&gt; Create basic utils (config, etc) and load the chain of operators
+ *        +----&gt; operators.setup()
+ *        +----&gt; task specific init()
+ *        +----&gt; initialize-operator-states()
+ *        +----&gt; open-operators()
+ *        +----&gt; run()
+ *        +----&gt; close-operators()
+ *        +----&gt; dispose-operators()
+ *        +----&gt; common cleanup
+ *        +----&gt; task specific cleanup()
+
+</code></pre>
+
+<h2 id="4-run-sourcestreamtask-streamtask">4. run() - SourceStreamTask (StreamTask)</h2>
+
+<pre><code>protected void run() throws Exception {
+	headOperator.run(getCheckpointLock(), getStreamStatusMaintainer());
+}
+</code></pre>
+
+<h2 id="5-run-streamsource-operator">5. run() - StreamSource (operator)</h2>
+
+<pre><code>this.ctx = StreamSourceContexts.getSourceContext(timeCharacteristic,
+			getProcessingTimeService(),
+			lockingObject,
+			streamStatusMaintainer,
+			collector,
+			watermarkInterval,
+			-1);
+
+try {
+	userFunction.run(ctx);
+</code></pre>
+
+<h2 id="6-run-fromelementsfunction-function">6. run() - FromElementsFunction (function)</h2>
+
+<pre><code>while (isRunning &amp;&amp; numElementsEmitted &lt; numElements) {
+	T next;
+	try {
+		next = serializer.deserialize(input);
+	}
+	catch (Exception e) {
+		throw new IOException(&quot;Failed to deserialize an element from the source. &quot; +
+						&quot;If you are using user-defined serialization (Value and Writable types), check the &quot; +
+						&quot;serialization functions.\nSerializer is &quot; + serializer);
+		}
+
+	synchronized (lock) {
+		ctx.collect(next);
+		numElementsEmitted++;
+	}
+}
+</code></pre>
+
+<h2 id="7-collect-streamsourcecontexts">7. collect() - StreamSourceContexts</h2>
+
+<pre><code>public void collect(T element) {
+	synchronized (lock) {
+		// 跳到 OperatorChain.collect
+		output.collect(reuse.replace(element));
+	}
+}
+</code></pre>
+
+<p>其中,output就是<strong>OperatorChain</strong></p>
+
+<h2 id="8-collect-operatorchain">8. collect() - OperatorChain</h2>
+
+<pre><code>public void collect(StreamRecord&lt;T&gt; record) {
+	if (this.outputTag != null) {
+		// we are only responsible for emitting to the main input
+		return;
+	}
+	//这个时候this.operator是flatmap
+	pushToOperator(record);
+}
+</code></pre>
+
+<p>其中record就是从source的结果反序列得到的结果</p>
+
+<pre><code>protected &lt;X&gt; void pushToOperator(StreamRecord&lt;X&gt; record) {
+	try {
+		// we know that the given outputTag matches our OutputTag so the record
+		// must be of the type that our operator expects.
+		@SuppressWarnings(&quot;unchecked&quot;)
+		StreamRecord&lt;T&gt; castRecord = (StreamRecord&lt;T&gt;) record;
+
+		numRecordsIn.inc();
+		operator.setKeyContextElement1(castRecord);
+		operator.processElement(castRecord);
+	}
+	catch (Exception e) {
+		throw new ExceptionInChainedOperatorException(e);
+	}
+}
+		
+</code></pre>
+
+<p>其中operator就是flatmap</p>
+
+<h2 id="9-processelement-streamflatmap-operator">9. processElement() - StreamFlatMap (operator)</h2>
+
+<pre><code>public void processElement(StreamRecord&lt;IN&gt; element) throws Exception {
+	collector.setTimestamp(element);
+	userFunction.flatMap(element.getValue(), collector);
+}
+</code></pre>
+
+<p>其中useFuntion就是用户自己定义的，比如</p>
+
+<pre><code>public static final class Tokenizer implements FlatMapFunction&lt;String, Tuple2&lt;String, Integer&gt;&gt; {
+
+	@Override
+	public void flatMap(String value, Collector&lt;Tuple2&lt;String, Integer&gt;&gt; out) {
+		// normalize and split the line
+		String[] tokens = value.toLowerCase().split(&quot;\\W+&quot;);
+
+		// emit the pairs
+		for (String token : tokens) {
+			if (token.length() &gt; 0) {
+				out.collect(new Tuple2&lt;String, Integer&gt;(token, 1));
+			}
+		}
+	}
+}
+</code></pre>
+    </div>
+
+    
+    
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">lms</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2017-12-14</span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">License</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="lmsreborn.github.io/post/slot/">
+            <span class="next-text nav-default">Slot</span>
+            <span class="prev-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:lmscsomg@gmail.com" class="iconfont icon-email" title="email"></a>
+  <a href="lmsreborn.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <span class="copyright-year">
+    &copy; 
+    2017
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">lms</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lmsreborn.github.io/lib/highlight/highlight.pack.js?v=20171001"></script>
+<script type="text/javascript" src="/lmsreborn.github.io/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lmsreborn.github.io/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lmsreborn.github.io/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/lmsreborn.github.io/dist/even.min.js?v=2.7.0"></script>
+  <script type="text/javascript">
+    window.MathJax = {
+      showProcessingMessages: false,
+      messageStyle: 'none'
+    };
+  </script>
+  <script async src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML'></script>
+
+
+
+
+</body>
+</html>
